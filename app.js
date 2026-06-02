@@ -1,12 +1,15 @@
-async function getVisitorCount() {
+// app.js vistor count update logic
+async function updateVisitorCount() {
   try {
-    // Temporarily mock the response — replace with real URL in Step 9
-    const mockData = { count: 123 };
-    document.getElementById("visitor-count").textContent = mockData.count;
+    const response = await fetch(
+      "https://<YOUR_FUNCTION_APP>.azurewebsites.net/api/visitor_counter",
+      { method: "POST" }
+    );
+    const data = await response.json();
+    document.getElementById("visitor-count").innerText = data.count;
   } catch (error) {
-    console.error("Error fetching visitor count:", error);
-    document.getElementById("visitor-count").textContent = "N/A";
+    console.error("Failed to fetch visitor count:", error);
   }
 }
 
-getVisitorCount();
+updateVisitorCount();
