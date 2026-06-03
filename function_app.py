@@ -1,25 +1,23 @@
+import logging, json, os
 import azure.functions as func
-import logging
+from azure.data.tables import TableServiceClient
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+def main(req: func.HttpRequest) -> func.HttpResponse:
+    try:
+        conn_str = os.environ["COSMOS_CONNECTION_STRING"]
+        service = TableServiceClient.from_connection_string(conn_str)
+        table = service.get_table_client("VisitorCount")
 
-@app.route(route="visitor_counter")
-def visitor_counter(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info('Python HTTP trigger function processed a request.')
+        entity = table.get_entity(partition_key="visitors", row_key="count")
+        new_count = entity["Count"] + 1
+        entity["Count"] = new_count
+        table.update_entity(entity)
 
-    name = req.params.get('name')
-    if not name:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            name = req_body.get('name')
-
-    if name:
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
-    else:
         return func.HttpResponse(
-             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
-             status_code=200
+            json.dumps({"count": new_count}),
+            mimetype="application/json",
+            headers={"Access-Control-Allow-Origin": "*"}
         )
+    except Exception as e:
+        logging.error(e)
+        return func.HttpResponse("Error", status_code=500)
