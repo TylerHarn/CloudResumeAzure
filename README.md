@@ -8,7 +8,7 @@ Below I will walk through each step of the challenge and highlight my key learni
 
 ***
 
-## Step 1 — Certification
+## Step 1: Certification
 
 The first step in the Azure Cloud Resume Challenge is to obtain the AZ-900.
 
@@ -19,4 +19,4 @@ I came into this project with existing Azure experience from my past 3 internshi
 
 ![alt text](image.png)
 
-## Step 2 & 3 — HTML & CSS 
+## Step 2 & 3:  HTML & CSS 
