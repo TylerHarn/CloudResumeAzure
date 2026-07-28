@@ -38,7 +38,7 @@ Using Azure Static Web Apps, I deployed my website's frontend files: HTML, CSS, 
 
 ![alt text](Images/Azure%20Static%20Web%20App.png)
 
-## Step 5 & 6: DNS Registration
+## Step 6 & 7: DNS Registration
 
 The next step involved registering a custom domain and configuring DNS records to point traffic to my Azure-hosted resume website.
 
@@ -52,9 +52,47 @@ Once the DNS records propagated, I verified the custom domain connection and ena
 ![alt text](Images/Domain%20name%20.png)
 
 
-![alt text](Images/Domain%20names%20in%20Azure.png)
+![alt text](Images/Domain%20names%20in%20Azure.png)\
+
 
 ![alt text](Images/Website%20Security.png)
 
 
+## Step 8, 9, 10: Visitor Counter Functionality, Databse Storage, and API Creation. 
 
+The next step of the Cloud Resume Challenge was adding a visitor counter to my website. Since the resume was hosted as a static website, I needed to introduce backend services that could store and retrieve data dynamically. Since Azure Web App doesn't allow for a 'true' backend, I went the Azure Function route as suggested in the challange document. 
+
+First, I created an Azure Cosmos DB account using the Table API to store my website's visitor count. The database contained the value that would keep track of how many visitors accessed my resume website.
+
+![alt text](Images/Cosmos%20DB%20Screenshot.png)
+
+After that, I crated a Azure Function using Python with an HTTP trigger that acted the API layer between my site and the Cosmos DB. This handled communcation between the frontend website and the database. 
+
+The function was responsible for receiving requests from the website, connecting to Cosmos DB (securely), retrieving the current visitor count, incrementing the value, and returning the updated count back to the frontend. Since my website and Azure Function were hosted on different domains, I also needed to configure Cross-Origin Resource Sharing (CORS) to allow my frontend application to securely communicate with the API. This approach prevented my JavaScript code from directly accessing the database and kept the database connection logic securely within the backend while ensuring only approved requests could interact with the API.
+
+
+![alt text](Images/Counter.png)
+
+
+![alt text](Images/Cors.png)
+
+Finally, I added JavaScript functionality to my resume website to communicate with the Azure Function API. When a visitor loads the webpage, JavaScript sends a request to the API, receives the updated visitor count, and displays it on the page.
+
+
+```javascript
+async function updateVisitorCount() {
+  try {
+    const response = await fetch(
+      "https://tylerharnapi-gab9b7gkd5grdphy.canadacentral-01.azurewebsites.net/api/VisitorCounter",
+      { method: "GET" }
+    );
+
+    const data = await response.json();
+    document.getElementById("visitor-count").innerText = data.count;
+
+  } catch (error) {
+    console.error("Failed to fetch visitor count:", error);
+  }
+}
+
+updateVisitorCount();
