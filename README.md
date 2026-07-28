@@ -54,5 +54,7 @@ Once the DNS records propagated, I verified the custom domain connection and ena
 
 ![alt text](Images/Domain%20names%20in%20Azure.png)
 
+![alt text](Images/Website%20Security.png)
+
 
 
