@@ -6,6 +6,9 @@ Over the past year, I had been eyeing the Cloud Resume Challenge, but never had 
 
 Below I will walk through each step of the challenge and highlight my key learnings, challenges, and areas of growth.
 
+<img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/bab6fe68-27cc-497e-838d-126f4fcdf59a" />
+
+
 ***
 
 ## Step 1: Certification
