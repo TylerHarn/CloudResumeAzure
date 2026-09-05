@@ -3,111 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tyler Harnaraine – Resume</title>
+  <title>Tyler's Azure Cloud Resume Challenge</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="resume">
 
-    <!-- Header -->
-    <header class="resume-header">
-      <h1 class="name">Tyler Harnaraine</h1>
-      <p class="contact">
-        Toronto, ON&nbsp;&nbsp;|&nbsp;&nbsp;416-825-2948&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="mailto:Tyler.harnaraine@gmail.com">Tyler.harnaraine@gmail.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="https://www.linkedin.com/in/tylerharnaraine/" target="_blank" rel="noopener noreferrer">LinkedIn</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="https://tylerharn.github.io/" target="_blank" rel="noopener noreferrer">Personal Portfolio</a>
+  <header class="hero">
+    <div class="column">
+      <h1 class="title">Tyler's Azure Cloud Challenge</h1>
+      <p class="subhead">A Project Built To Learn The Foundations of the Cloud</p>
+    </div>
+  </header>
+
+  <div class="column spine">
+
+    <section class="block intro">
+      <p class="lede">You've reached Tyler's Cloud Challenge!</p>
+      <p>
+        This site was built to complete the Cloud Resume Challenge, a hands on exercise in writing
+        <strong>HTML</strong> and <strong>CSS</strong>, hosting a static website, configuring a custom domain
+        with <strong>HTTPS</strong>, and building a <strong>serverless</strong> backend to track visitors.
+        Every part of this page, including the visitor count below, runs on <strong>Azure</strong> services
+        that were configured and connected from scratch.
       </p>
-    </header>
-
-    <!-- Education -->
-    <section class="section">
-      <h2 class="section-title">EDUCATION:</h2>
-      <div class="section-body">
-        <div class="entry-header">
-          <span class="entry-org">Toronto Metropolitan University</span>
-          <span class="entry-date">September 2021 – May 2026</span>
-        </div>
-        <p class="entry-degree"><em>Bachelor of Commerce – Business Technology Management (Co-op)</em></p>
-        <p class="entry-detail">
-          <strong>Key Coursework:</strong> IT Infrastructure Management, Scripting &amp; Automation, Database Management &amp; SQL, Cloud
-          Architecture, Data Visualization, Cybersecurity Risk Management &amp; IT Governance, Cloud Architecture.
-        </p>
-        <p class="entry-detail">
-          <strong>Technical Skills:</strong> Active Directory, Microsoft Intune, Azure, AWS, GitHub Actions, Python, PowerShell, REST API
-          Integration, Power Platform, Power BI, ServiceNow, Wireshark, Azure OpenAI, Prompt Engineering, SharePoint.
-        </p>
-      </div>
+      <p>
+        The diagram below shows how the pieces fit together, from the browser through
+        <strong>Azure Static Web Apps</strong>, an <strong>Azure Function</strong>, and
+        <strong>Cosmos DB</strong>.
+      </p>
     </section>
 
-    <!-- Experience -->
-    <section class="section">
-      <h2 class="section-title">EXPERIENCE:</h2>
-      <div class="section-body">
-
-        <div class="job">
-          <div class="entry-header">
-            <span class="entry-org">PointClickCare, <span class="entry-role">Systems Administrator Co-op</span></span>
-            <span class="entry-date">January 2025 – August 2025</span>
-          </div>
-          <ul class="bullets">
-            <li>Developed an automated dashboard integrating SaaS APIs (Zoom, Adobe, Box) to detect 50+ unrevoked licenses during employee offboarding, reducing unauthorized access risks and software expenses by ~$3000 within the first audit.</li>
-            <li>Built 10 Microsoft Power Automate flows using the Salesforce API, delivering real-time notifications for high-priority tickets across all Salesforce customer service queues, reducing average response time by ~10 minutes.</li>
-            <li>Conducted a security audit of 2,500+ apps in Microsoft Defender for Cloud Apps, identifying 70+ redundant and high-risk applications, and unsanctioning 10+ unauthorized apps to reduce PointClickCare's Cloud attack surface.</li>
-            <li>Performed daily endpoint checks, maintaining servers, signage, printers, and 150+ AV Rooms across 4 locations, ensuring timely patch deployment to maintain compliance and minimize downtime.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="entry-header">
-            <span class="entry-org">Financial Services Regulatory Authority of Ontario, <span class="entry-role">Systems Engineer Co-op</span></span>
-            <span class="entry-date">May 2024 – August 2024</span>
-          </div>
-          <ul class="bullets">
-            <li>Contributed to the organization-wide Windows 11 migration and the transition from SCCM to Intune by assisting with issues such as device enrollment, Wi-Fi certificates, and application packaging, leading to a successful upgrade of 10% of FSRA's machines within first month.</li>
-            <li>Collaborated closely with multiple IT teams to resolve 200+ escalated tickets, addressing a range of issues related to FortiClient VPN, Intune endpoint compliance, and cybersecurity threats.</li>
-            <li>Developed 10+ PowerShell scripts to automate the retrieval of large Active Directory and Azure datasets, supporting the needs of the network and infrastructure teams.</li>
-            <li>Supported AV across the organization and for the Board of Directors, including daily system checks, on-call troubleshooting, and hardware/software maintenance in 50+ FSRA meeting rooms.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="entry-header">
-            <span class="entry-org">Tridel, <span class="entry-role">IT Experience Consultant Co-op</span></span>
-            <span class="entry-date">May 2023 – December 2023</span>
-          </div>
-          <ul class="bullets">
-            <li>Provided helpdesk support to 500+ employees both on-premises and on-site, efficiently resolving 250+ user tickets related to software, hardware, and cybersecurity incidents.</li>
-            <li>Successfully launched applications in Azure, created Intune policies, and scripted automation using PowerShell and Python in collaboration with the system administration team.</li>
-            <li>Created a total of 75+ technical documents, pre-recorded videos, and live training sessions to support the launch of multiple SharePoint Intranets, LinkedIn Learning, and IT chatbot, improving IT self-service resolution.</li>
-            <li>Co-developed a service desk chatbot with NLP capabilities, conducting beta testing with users to polish conversation flows/accuracy, reducing email-based IT support requests by 25% within first month of deployment.</li>
-          </ul>
-        </div>
-
-      </div>
+    <section class="block">
+      <figure class="plate">
+        <img
+          src="Images/Visual Diagram.png"
+          alt="Architecture diagram showing the browser connecting to Azure Static Web Apps, which calls an Azure Function that reads and writes visitor counts in Cosmos DB"
+        />
+        <figcaption>Request flow from the browser to Cosmos DB.</figcaption>
+      </figure>
     </section>
 
-    <!-- Certifications -->
-    <section class="section">
-      <h2 class="section-title">CERTIFICATIONS</h2>
-      <div class="section-body">
-        <p class="entry-detail certs">
-          <strong>Industry Certifications:</strong> ISC2 CC – Certified in Cybersecurity, Microsoft AZ-900 – Azure Fundamentals, Cisco – Networking Basics
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <strong>Academic Certifications:</strong> TMU Ted Rogers Power of Excel 2.0, Python 2.0, SQL 2.0
-        </p>
-      </div>
+    <section class="block learn-more">
+      <p>Curious How This Was Built? Click The Image Below to View The Source Code and Project Findings On <strong>GitHub</strong>.</p>
+      <a
+        href="https://github.com/TylerHarn/CloudResumeAzure"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="plate plate-link"
+      >
+        <img src="Images/Learn More Image .png" alt="Learn more on GitHub" />
+      </a>
     </section>
 
-    <footer class="resume-footer">
-      <p><strong>Vistors: </strong> <span id="visitor-count">Loading...</span></p>
+    <footer class="block counter">
+      <span class="counter-label">Visitors</span>
+      <span class="counter-value" id="visitor-count">loading</span>
     </footer>
 
   </div>
-   <script src="app.js"></script>
+
+  <script src="app.js"></script>
 </body>
 </html>
-
